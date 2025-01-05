@@ -145,7 +145,7 @@
 
 <div class="opop" style="display: none;">
     <div class="opop_container">
-        <h4>পেমেন্ট পদ্ধতি নির্বাচন করুন</h4>
+        <h4>Select payment method</h4>
         <div style="display: flex; justify-content: space-between;margin-top: 20px;" onclick="goMethodSelecrot()">
             <div style="font-size: 15px;">DCExchange</div>
             <div style="font-size: 15px;"><i class="fa fa-chevron-right"></i></div>

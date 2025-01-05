@@ -33,11 +33,6 @@ if (file_exists($maintenance = __DIR__.'/storage/framework/maintenance.php')) {
 
 require __DIR__.'/vendor/autoload.php';
 
-Dotenv\Dotenv::createImmutable(__DIR__)->load();
-
-$base_uri = env('PRIMEPAG_API_URL');
-$prime_key = env('PRIMEPAG_API_KEY');
-$prime_secret = env('PRIMEPAG_API_KEY_SECRET');
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +44,8 @@ $prime_secret = env('PRIMEPAG_API_KEY_SECRET');
 | to this client's browser, allowing them to enjoy our application.
 |
 */
+
+
 
 $app = require_once __DIR__.'/bootstrap/app.php';
 

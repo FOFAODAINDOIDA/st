@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link rel="stylesheet" href="{{asset('public/style.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets/css/')}}/pix_payment.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 
@@ -29,51 +29,28 @@
             <div class="col-12">
                 <div class="card mt-2">
                     <div class="card-body">
-                        <h3 class="header_title">{{price($amount)}}</h3>
-                        <p class="header_count">Countdown</p>
-                        <h3 class="header_time"><span id="timer" data-hours="00" data-minutes="30" data-seconds="00"></span></h3>
+                        <b>VALUE:</b> <h3 class="header_title"> {{price ($amount)}}</h3>
                     </div>
                 </div>
 
-                <p class="payment_para">
-                    Please upload the payment voucher within the specified time, otherwise the OTC has the right to cancel the order.
-                </p>
-
                 <h3 class="payment_me_title">
-                    Payment Method
+                    HOW TO PAY:
                 </h3>
 
                 <div class="card mt-2">
                     <div class="card-body">
-                        <div class="d-flex flexer justify-content-between">
-                            <div class="td1">Wallet Name</div>
-                            <div class="td2">{{$method->name}} <i onclick="copiedText('{{$method->name}}')" class="fa fa-copy"></i></div>
+                        <div class="d-flex flex-column fw-bold justify-content-between">
+                                <div class="td2" style="font-size:14px;"> 1 - Open your bank app. </div>
+                                <div class="td2" style="font-size:14px;"> 2 - Choose "Pay with Pix". </div>
+                                <div class="td2" style="font-size:14px;"> 3 - Scan the QR Code or Copy and Paste the PIX code to make payment. </div>
+                                <div class="td2" style="font-size:14px;"> OBS: Pay just one time to avoid any double payment problem! </div>                                
                         </div>
 
-                        <div class="d-flex flexer justify-content-between" style="margin: 10px 0;">
-                            <div class="td1">Wallet Account</div>
-                            <div class="td2">{{$method->address}} <i onclick="copiedText('{{$method->address}}')" class="fa fa-copy"></i></div>
-                        </div>
+                        <hr style="margin-top: 20px;">
 
-                        <div class="d-flex flexer justify-content-between">
-                            <div class="td2" style="font-size:12px;">Please make send money and submit payment successfully</div>
-                        </div>
-
-                        <hr style="margin-top: 25px;">
-
-                        <div class="form-group">
-                            <label for="trans_id">Upload Transaction ID</label>
-                            <input type="text" required placeholder="Please enter Upload serial number" id="trans_id" name="transaction_id" class="form-control">
-                        </div>
-
-                        <div class="form-group" style="margin-top: 20px;">
-                            <label for="photo">
-                                Upload Payment Picture
-                                <br>
-                                <img id="photo_prove" src="{{asset('public/font_fount.jpeg')}}" alt="">
-                            </label>
-                            <input type="file" required onchange="openFile(event)" name="photo" id="photo" style="display: none;">
-                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <img src="data:image/png;base64,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">
+                        </div>                        
                     </div>
                 </div>
 
@@ -88,17 +65,6 @@
 
 @include('alert-message')
 <script>
-    var openFile = function(file) {
-        var input = file.target;
-        var reader = new FileReader();
-        reader.onload = function(){
-            var dataURL = reader.result;
-            var output = document.getElementById('photo_prove');
-            output.src = dataURL;
-        };
-        reader.readAsDataURL(input.files[0]);
-    };
-
     function copiedText(text){
         const body = document.body;
         const input = document.createElement("input");

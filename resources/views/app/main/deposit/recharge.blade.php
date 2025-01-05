@@ -1,3 +1,40 @@
+@php
+    $baseUrl = env('PRIMEPAG_API_URL');
+    $apiKey = env('PRIMEPAG_API_KEY');
+    $apiSecret = env('PRIMEPAG_API_KEY_SECRET');
+
+    $url = $baseUrl . '/auth/generate_token';
+    $data = json_encode(['grant_type' => 'client_credentials']);
+
+    $authorization = base64_encode($apiKey . ':' . $apiSecret);
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Basic ' . $authorization, 'Content-Type: application/json']);
+
+    $response = curl_exec($ch);
+    $error = curl_error($ch);
+
+    curl_close($ch);
+
+    if ($error) {
+        echo 'Error: ' . $error;
+    } else {
+        $decodedResponse = json_decode($response, true);
+        if (isset($decodedResponse['access_token'])) {
+            $accessToken = $decodedResponse['access_token'];
+            $tokenType = $decodedResponse['token_type'];
+        } else {
+            echo 'Error: ' .
+                (isset($decodedResponse['error'])
+                    ? $decodedResponse['error'] . ': ' . $decodedResponse['error_description']
+                    : 'Invalid response');
+        }
+    }
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +66,6 @@
         <div></div>
     </div>
     <div class="container">
-
         <ul class="list-group">
             @foreach (\App\Models\PaymentMethod::where('status', 'active')->get() as $element)
                 <li class="list-group-item" style="border-top: none; border-bottom: 1px solid #ddd;"
@@ -45,11 +81,35 @@
         </ul>
 
         <div class="submit_btn">
-            <a href="javascript:void(0)" onclick="goPa({{$amount}})">Confirm</a>
+            <a href="javascript:void(0)" onclick="goPa()">Confirm</a>
         </div>
         <input type="hidden" name="method" value="">
         @include('alert-message')
-        <script src="{{ asset('public/assets/js') }}/payment.js" data-url="{{ url('/payment-confirmation') }}"></script>
+        <script>
+            function goPaymentMethod(_this, method_id) {
+                let elements = document.querySelectorAll('.checker');
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].style.background = 'transparent';
+                    elements[i].style.color = '#000';
+                }
+
+                _this.querySelector('.checker').setAttribute('style', "background: #0093ff;color: #fff;");
+
+                document.querySelector('input[name="method"]').value = method_id;
+            }
+
+            function goPa() {
+                let method = document.querySelector('input[name="method"]').value;
+
+                if (method != '') {
+                    sessionStorage.setItem('paymentMethod', '{{$accessToken}}'); // Ou localStorage
+                    sessionStorage.setItem('paymentAmount', '{{$tokenType}}'); // Ou localStorage
+                    window.location.href = '{{ url('/payment-confirmation') }}' + '/' + method + '/' + '{{ $amount }}';
+                } else {
+                    message('PLease select a payment method');
+                }
+            }
+        </script>
     </div>
 </body>
 

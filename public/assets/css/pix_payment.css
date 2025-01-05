@@ -114,10 +114,12 @@ input.form-control:focus-visible{
 .form-control:focus {
     box-shadow: none;
 }
+
 img {
-    width: 150px;
+    width: 450px;
     border-radius: 5px;
 }
+
 .btn-success {
     background: var(--main);
 }
