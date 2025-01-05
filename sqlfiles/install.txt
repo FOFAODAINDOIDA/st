@@ -1,0 +1,10 @@
+PHP 8.1+ 
+
+Upload the database.sql file to sql. Link database information in .env file.
+
+admin login: yoursite/admin/secret/login
+email: admin@gmail.com
+password: admin
+
+https://t.me/ponziscriptshop
+https://t.me/ponziscriptadmin
