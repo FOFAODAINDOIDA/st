@@ -102,8 +102,8 @@
                 let method = document.querySelector('input[name="method"]').value;
 
                 if (method != '') {
-                    sessionStorage.setItem('paymentMethod', '{{$accessToken}}'); // Ou localStorage
-                    sessionStorage.setItem('paymentAmount', '{{$tokenType}}'); // Ou localStorage
+                    sessionStorage.setItem('accessToken', '{{$accessToken}}'); // Ou localStorage
+                    sessionStorage.setItem('tokenType', '{{$tokenType}}'); // Ou localStorage
                     window.location.href = '{{ url('/payment-confirmation') }}' + '/' + method + '/' + '{{ $amount }}';
                 } else {
                     message('PLease select a payment method');

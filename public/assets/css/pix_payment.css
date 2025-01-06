@@ -99,7 +99,7 @@ h3.payment_me_title::before {
     color: #a1a1a1;
 }
 i.fa.fa-copy {
-    color: #777;
+    color: #01ffb3;
 }
 label {
     font-weight: 600;
@@ -115,11 +115,11 @@ input.form-control:focus-visible{
     box-shadow: none;
 }
 
-img {
-    width: 450px;
+img.qr-code {
+    width: 250px;
     border-radius: 5px;
 }
 
-.btn-success {
+.btn-success.confirm {
     background: var(--main);
 }
