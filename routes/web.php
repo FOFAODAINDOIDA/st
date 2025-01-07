@@ -312,6 +312,9 @@ Route::middleware('throttle:limit-check')->group(function (){
         //USDT Deposit
         Route::post('/usdt-deposit-submit', [OnepayController::class, 'usdt_deposit'])->name('usdt-deposit-submit');
 
+        //PIX Deposit
+        Route::post('/pix-deposit-submit', [OnepayController::class, 'pix_deposit'])->name('pix_deposit_submit');
+
         //Withdraw
         Route::get('withdraw', [WithdrawController::class, 'withdraw'])->name('user.withdraw');
         Route::post('withdraw-request', [WithdrawController::class, 'withdrawRequest'])->name('user.withdraw.request');
@@ -396,6 +399,8 @@ Route::middleware('throttle:limit-check')->group(function (){
     Route::get('/pix-payment-confirmation/{method}/{amount}', [OnepayController::class,'pixPaymentView']);
     
     Route::get('recharge-confirm-submit', [UserController::class, 'recharge_confirm_submit']);
+
+    Route::get('recharge-pix-confirm-submit', [UserController::class, 'recharge_pix_confirm_submit']);
 });
 
   Route::get('download-apk', [UserController::class, 'download_apk'])->name('user.download.apk');

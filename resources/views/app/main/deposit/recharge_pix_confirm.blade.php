@@ -17,10 +17,11 @@
     <div class="header">
         <div onclick="window.location.href='{{ url('') }}/payment-method/{{ $amount }}'"><i
                 class="fa fa-chevron-left"></i></div>
-        <div><h4>PIX DETAILS</h4></div>
+        <div class="justify-content-center">
+            <h4>PIX DETAILS</h4></div>
         <div></div>
     </div>
-    <form action="{{ url('recharge-confirm-submit') }}" method="get" enctype="multipart/form-data">
+    <form action="{{ url('recharge-pix-confirm-submit') }}" method="get" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="paymethod" value="{{ $method->name }}">
         <input type="hidden" name="amount" value="{{ $amount }}">
@@ -44,8 +45,9 @@
                             <div class="d-flex flex-column fw-bold justify-content-between">
                                 <div class="td2" style="font-size:14px;"> 1 - Open your bank app. </div>
                                 <div class="td2" style="font-size:14px;"> 2 - Choose "Pay with Pix". </div>
-                                <div class="td2" style="font-size:14px;"> 3 - Scan the QR Code or Copy and Paste the
-                                    PIX code to make payment. </div>
+                                <div class="td2" style="font-size:14px;"> 3 - Scan the QR Code or use the PIX Copy
+                                    and Paste option </div>
+                                </br>
                                 <div class="td2" style="font-size:14px;"> OBS: Pay just one time to avoid any double
                                     payment problem! </div>
                             </div>
@@ -54,58 +56,137 @@
 
                             <div class="d-flex flex-column justify-content-center align-items-center form-group">
                                 <label for="trans_id">QR CODE - PIX</label>
-
                                 @php
-                                    $base64_string =
-                                        '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'; // Sua string Base64
-                                    $image_data = base64_decode($base64_string);
-                                    $finfo = finfo_open();
-                                    $mime_type = finfo_buffer($finfo, $image_data, FILEINFO_MIME_TYPE);
-                                    finfo_close($finfo);
-                                    $image = imagecreatefromstring($image_data);
+                                    /* Variáveis de ambiente configurados no servidor
+ que irão sustentar nossas requisições */
+                                    $baseUrl = env('PRIMEPAG_API_URL');
+                                    $apiKey = env('PRIMEPAG_API_KEY');
+                                    $apiSecret = env('PRIMEPAG_API_KEY_SECRET');
 
-                                    if (!$image) {
-                                        die('Erro ao criar imagem a partir do Base64.');
-                                    }
+                                    /* Variáveis locais que irão complementar
+ nossas requisições */
+                                    $qrCodeUrl = $baseUrl . '/v1/pix/qrcodes';
+                                    $accessTokenUrl = $baseUrl . '/auth/generate_token';
 
-                                    $width = imagesx($image);
-                                    $height = imagesy($image);
+                                    $dataToken = json_encode(['grant_type' => 'client_credentials']);
+                                    $dataQr = [
+                                        'generator_name' => 'RUAM GUILHERME FERREIRA DE FREITAS',
+                                        'generator_document' => '05766922205',
+                                        'external_reference' => 'TestePlataforma2',
+                                        'expiration_time' => 300000,
+                                        'value_cents' => (int) $amount * 100,
+                                    ];
 
-                                    $margin = 180;
+                                    $authToken = base64_encode($apiKey . ':' . $apiSecret);
 
-                                    $new_width = $width - 2 * $margin;
-                                    $new_height = $height - 2 * $margin;
+                                    // Requisição 1: Obter o token
+                                    $ch1 = curl_init($accessTokenUrl);
 
-                                    $x = $margin;
-                                    $y = $margin;
-
-                                    $cropped_image = imagecrop($image, [
-                                        'x' => $x,
-                                        'y' => $y,
-                                        'width' => $new_width,
-                                        'height' => $new_height,
+                                    curl_setopt_array($ch1, [
+                                        CURLOPT_RETURNTRANSFER => true,
+                                        CURLOPT_POST => true,
+                                        CURLOPT_POSTFIELDS => $dataToken,
+                                        CURLOPT_HTTPHEADER => [
+                                            'Authorization: Basic ' . $authToken,
+                                            'Content-Type: application/json',
+                                        ],
                                     ]);
+                                    $response1 = curl_exec($ch1);
+                                    curl_close($ch1);
 
-                                    if (!$cropped_image) {
-                                        die('Erro ao recortar a imagem.');
+                                    $data1 = json_decode($response1, true);
+                                    $token = $data1['access_token'] ?? null; // Usando o operador null coalescing (PHP 7+)
+
+                                    if ($token) {
+                                        // Requisição 2: Usar o token
+                                        $ch2 = curl_init($qrCodeUrl);
+                                        curl_setopt_array($ch2, [
+                                            CURLOPT_RETURNTRANSFER => true,
+                                            CURLOPT_POST => true,
+                                            CURLOPT_POSTFIELDS => $dataQr,
+                                            CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . $token],
+                                        ]);
+                                        $response2 = curl_exec($ch2);
+                                        $error = curl_error($ch2);
+
+                                        curl_close($ch2);
+
+                                        if ($error) {
+                                            echo 'Error: ' . $error;
+                                        } else {
+                                            $decodedResponse = json_decode($response2, true);
+                                            if (isset($decodedResponse['qrcode'])) {
+                                                $referenceCode = $decodedResponse['qrcode']['reference_code'];
+                                                $externalReference = $decodedResponse['qrcode']['external_reference'];
+                                                $qrCodeContent = $decodedResponse['qrcode']['content'];
+                                                $qrCodeImageBase64 = $decodedResponse['qrcode']['image_base64'];
+
+                                                $image_data = base64_decode($qrCodeImageBase64);
+                                                $finfo = finfo_open();
+                                                $mime_type = finfo_buffer($finfo, $image_data, FILEINFO_MIME_TYPE);
+                                                finfo_close($finfo);
+                                                $image = imagecreatefromstring($image_data);
+
+                                                if (!$image) {
+                                                    die('Erro ao criar imagem a partir do Base64.');
+                                                }
+
+                                                $width = imagesx($image);
+                                                $height = imagesy($image);
+
+                                                $margin = 180;
+
+                                                $new_width = $width - 2 * $margin;
+                                                $new_height = $height - 2 * $margin;
+
+                                                $x = $margin;
+                                                $y = $margin;
+
+                                                $cropped_image = imagecrop($image, [
+                                                    'x' => $x,
+                                                    'y' => $y,
+                                                    'width' => $new_width,
+                                                    'height' => $new_height,
+                                                ]);
+
+                                                if (!$cropped_image) {
+                                                    die('Erro ao recortar a imagem.');
+                                                }
+
+                                                ob_start();
+                                                imagepng($cropped_image);
+                                                $cropped_image_data = ob_get_contents();
+                                                ob_end_clean();
+
+                                                $cropped_base64 = base64_encode($cropped_image_data);
+
+                                                echo '<img class="qr-code" src="data:' .
+                                                    $mime_type .
+                                                    ';base64,' .
+                                                    $cropped_base64 .
+                                                    '" />';
+
+                                                imagedestroy($image);
+                                                imagedestroy($cropped_image);
+                                            } else {
+                                                echo 'Error: ' .
+                                                    (isset($decodedResponse['error'])
+                                                        ? $decodedResponse['error'] .
+                                                            ': ' .
+                                                            $decodedResponse['error_description']
+                                                        : 'Invalid response');
+                                            }
+                                        }
+                                    } else {
+                                        echo 'Erro ao obter o token.';
                                     }
-
-                                    ob_start();
-                                    imagepng($cropped_image);
-                                    $cropped_image_data = ob_get_contents();
-                                    ob_end_clean();
-
-                                    $cropped_base64 = base64_encode($cropped_image_data);
-
-                                    echo '<img class="qr-code" src="data:' . $mime_type . ';base64,' . $cropped_base64 . '" />';
-
-                                    imagedestroy($image);
-                                    imagedestroy($cropped_image);
                                 @endphp
                             </div>
-                            <div class="d-flex flex-column justify-content-center align-items-center form-group" style="margin-top: 20px;">
-                                  <div class="td2" > COPY AND PASTE <i class="fa fa-copy" onclick="copiedText('CODIGO PIX')"></i></div>
-                           </div>
+                            <div class="d-flex flex-column justify-content-center align-items-center form-group"
+                                style="margin-top: 20px;">
+                                <div class="td2 fw-bold"> PIX COPY AND PASTE <i class="fa fa-copy"
+                                        onclick="copiedText('{{ $qrCodeContent }}')"></i></div>
+                            </div>
                         </div>
                     </div>
 
@@ -120,25 +201,29 @@
 
     @include('alert-message')
     <script>
-        const meuToken = sessionStorage.getItem('accessToken');
-        const tokenType = sessionStorage.getItem('tokenType');
-
-        console.log(meuToken);
-        console.log(tokenType);
-
-
         function copiedText(text) {
             const body = document.body;
             const input = document.createElement("input");
             body.append(input);
             input.style.opacity = 0;
-            input.value = text.replaceAll(' ', '');
-            input.select();
-            input.setSelectionRange(0, input.value.length);
-            document.execCommand("Copy");
-            input.blur();
-            input.remove();
-            message('Copied successfully')
+            input.value = text; // Keep spaces by default
+
+            try {
+                input.select();
+                input.setSelectionRange(0, input.value.length);
+                const successful = document.execCommand("Copy");
+                if (successful) {
+                    message('Copied successfully');
+                } else {
+                    message('Failed to copy text');
+                }
+            } catch (err) {
+                message('Error copying text');
+                console.error('Error:', err); // Log the error for debugging
+            } finally {
+                input.blur();
+                input.remove();
+            }
         }
     </script>
 </body>
