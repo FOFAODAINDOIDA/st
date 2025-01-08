@@ -63,7 +63,7 @@
                                         </li>
                                         <li>
                                             <span>{{translator('Time')}}</span>
-                                            <span>{{$purchase->package->validity}} {{translator('Days')}}</span>
+                                            <span>{{$purchase->package->validity}} {{translator('Dias')}}</span>
                                         </li>
                                         <li>
                                             <span>{{translator('Limit')}}</span>
@@ -91,7 +91,7 @@
                     @endforeach
                     @else
                         <div class="alert alert-success">
-                            {{translator('Please  first invest in our platform')}}
+                            {{translator('Por favor, primeiro invista em nossa plataforma')}}
                         </div>
                     @endif
                 </div>

@@ -109,7 +109,7 @@
         document.execCommand("Copy");
         input.blur();
         input.remove();
-        message('Copied successfully')
+        message('সফলভাবে অনুলিপি করুন')
     }
 </script>
 

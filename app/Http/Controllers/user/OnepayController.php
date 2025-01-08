@@ -25,22 +25,12 @@ class OnepayController extends Controller
         $methodRecord = PaymentMethod::where('id', $method)->first();
 
         $number = $methodRecord->number;
-
-        if ($method == '43') {
-            return redirect('/pix-payment-confirmation/'.$method.'/'.$amount);
-        }
-
         return redirect('/api-payment-confirmation/'.$method.'/'.$amount);
     }
 
     public function apiPaymentView($method, $amount){
         $method = PaymentMethod::findOrfail($method);
         return view('app.main.deposit.recharge_confirm', compact('method', 'amount'));
-    }
-
-    public function pixPaymentView($method, $amount){
-        $method = PaymentMethod::findOrfail($method);
-        return view('app.main.deposit.recharge_pix_confirm', compact('method', 'amount'));
     }
 
 
@@ -54,26 +44,6 @@ class OnepayController extends Controller
         $model->transaction_id = $request->transaction_id;
         $model->number = 0;
         $model->photo = $path ?? $model->photo;
-        $model->amount = $request->usdt_amount;
-        $model->charge_amount = 0;
-        $model->final_amount = $request->usdt_amount;
-        $model->date = date('d-m-Y H:i:s');
-        $model->status = 'pending';
-        $model->save();
-        
-        return redirect()->back()->with('success_usdt', 'Successful..');
-    }
-
-    public function pix_deposit(Request $request){
-        $model = new Deposit();
-
-        //$path = uploadImage(false ,$request, 'photo', 'upload/usdt/', 200, 200 ,$model->photo);
-        $model->user_id = Auth::id();
-        $model->method_name = 'pix';
-        $model->order_id = rand(00000000,99999999);
-        $model->transaction_id = $request->transaction_id;
-        $model->number = 0;
-        //$model->photo = $path ?? $model->photo;
         $model->amount = $request->usdt_amount;
         $model->charge_amount = 0;
         $model->final_amount = $request->usdt_amount;

@@ -21,8 +21,8 @@
         <i class="fa fa-chevron-left"></i>
     </div>
     <div>
-        <h1 class="d_draw">Daily draw</h1>
-        <h1 class="l_wheel">Lucky wheel</h1>
+        <h1 class="d_draw">Sorteio diário</h1>
+        <h1 class="l_wheel">Roda da sorte</h1>
     </div>
 </div>
 <div id="spin-container">
@@ -38,27 +38,27 @@
         </div>
     </div>
     <div class="lucky_count">
-        <p>0 lucky draw left</p>
+        <p>Falta 0 sorteio</p>
     </div>
 
     <div class="rules">
         <img class="ribbon" src="{{asset('public/spin/image')}}/ribbon3.png">
-        <p class="activity_rules">Activity Rules</p>
+        <p class="activity_rules">Regras da Atividade</p>
     </div>
 
     <div class="activity_notice">
-        <p>1. Use a draw spin cod to use ex-offtion lucky draw spin.</p>
-        <p>2. Contact Telegram ex-offion official member to get Spin Code.</p>
+        <p>1. Use um bacalhau de sorteio para usar o giro do sorteio ex-offtion.</p>
+        <p>2. Entre em contato com o grupo oficial do Whatssapp para obter o código de rotação.</p>
     </div>
 
     <div class="rules">
         <img class="ribbon" src="{{asset('public/spin/image')}}/ribbon3.png">
-        <p class="activity_rules">Leader Board</p>
+        <p class="activity_rules">Quadro de Líderes</p>
     </div>
 
     <div class="spin_code">
         <input type="text" class="spin_input" placeholder="Enter Spin Code">
-        <button type="button" class="spin_code_btn" onclick="SUBMIT_SPIN_CODE()">Submit Spin Code</button>
+        <button type="button" class="spin_code_btn" onclick="SUBMIT_SPIN_CODE()">Enviar código de rotação</button>
     </div>
 </div>
 <meta name="csrf-token" content="{{ csrf_token() }}" />

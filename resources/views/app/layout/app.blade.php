@@ -17,9 +17,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('public/app')}}/plugins/turbo-slider/turbo.css">
     <link rel="stylesheet" href="{{asset('public/app')}}/css/slick-theme.css">
     <link rel="stylesheet" href="{{asset('public/app')}}/css/slick.css">
-    <link rel="stylesheet" href="{{asset('public/app')}}/developer/withdraw.css">
+    <link rel="stylesheet" href="{{asset('public/app/developer/withdraw.css')}}">
     <link rel="stylesheet" href="{{asset('public/app')}}/css/style.css">
-    <link rel="stylesheet" href="{{asset('public/app')}}/developer/developer.css">
+    <link rel="stylesheet" href="{{asset('public/app/developer/developer.css')}}">
     <style>
         img.rng_logo {
             width: 90px;
@@ -60,8 +60,8 @@
     <img src="{{asset('public/app/img/loading.gif')}}" alt="Loading">
 </div>
 {{--Loading--}}
-<script src="{{asset('public/assets')}}toast.js"></script>
-<link rel="stylesheet" href="{{asset('public/assets')}}loading.css">
+<script src="{{asset('public/assets')}}/toast.js"></script>
+<link rel="stylesheet" href="{{asset('public/app/css/loading.css')}}">
 <div class="loader_boss" style="display: none">
     <svg class="spinner">
         <circle>
@@ -71,7 +71,7 @@
         </circle>
     </svg>
     <div>
-        <span>Loading...</span>
+        <span>Carregando...</span>
     </div>
 </div>
 {{--End loading--}}

@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Models\Purchase;
 use Stichoza\GoogleTranslate\GoogleTranslate;
 
@@ -36,7 +37,7 @@ if (! function_exists('price')) {
     {
 //        return number_format($price, 2);
 //        return $currency = '$'.str_replace(',', '', $price);
-        return setting('currency').number_format($price, 2);
+        return setting('currency'). number_format($price, 2);
     }
 }
 

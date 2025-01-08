@@ -142,8 +142,7 @@ class ManageUserController extends Controller
 
     public function purchaseRecord()
     {
-        $users = User::where('invest_balance', '>', 0)->orderByDesc('id')->paginate(25);
-        return view('admin.pages.users.purchase-record', compact('users'));
+
     }
 
     public function continue_mining()

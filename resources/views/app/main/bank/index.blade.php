@@ -54,24 +54,26 @@
     }
 </style>
 <div class="page_title" style="background: #1989fa;display: flex;justify-content: space-between;padding: 12px 12px;">
-    <div onclick="window.location.href='{{route('dashboard')}}'"><i class="fa fa-chevron-left"></i></div>
+    <div onclick="window.location.href='/dashboard'"><i class="fa fa-chevron-left"></i></div>
     <div>Bank Account Setup</div>
     <div></div>
 </div>
-<form action="{{route('user.bank_setup_confirm')}}" method="post">@csrf
+<form action="/user/bank-setup-confirm" method="post">
+    <!-- Adicionando proteção CSRF manual (exemplo) -->
+    <input type="hidden" name="_token" value="TOKEN_DE_EXEMPLO">
     <div style="margin: 0 10px;">
         <div style="margin-top: 40px">
         </div>
         <div>
-            <input type="text" placeholder="Real Name" value="{{auth()->user()->realname}}" name="realname">
+            <input type="text" placeholder="Real Name" value="John Doe" name="realname">
             <br>
             <select name="gateway_method" id="" style="width: 98%;border: 1px solid gray;padding: 10px 0;border-radius: 5px;">
-                <option value="bkash" @if(auth()->user()->gateway_method == 'bkash') selected @endif>bkash</option>
-                <option value="nagad" @if(auth()->user()->gateway_method == 'nagad') selected @endif>Nagad</option>
+                <option value="bkash" selected>bkash</option>
+                <option value="nagad">Nagad</option>
             </select>
             <br>
             <br>
-            <input type="text" placeholder="Bank Account" value="{{auth()->user()->gateway_number}}" name="gateway_number">
+            <input type="text" placeholder="Bank Account" value="1234567890" name="gateway_number">
             <div style="text-align: center;margin-top: 30px;">
                 <button>Submit Bank</button>
             </div>
@@ -79,7 +81,11 @@
     </div>
 </form>
 
-@include('alert-message')
+<!-- Substituindo 'include' por HTML fixo (alert-message exemplo) -->
+<div class="alert-message">
+    <!-- Mensagem de exemplo -->
+    <p style="color: red; text-align: center;">Erro ao processar dados. Tente novamente!</p>
+</div>
 
 </body>
 </html>

@@ -120,7 +120,7 @@
         <div class="homepage" data-v-81dae98a="">
             <div class="van-nav-bar van-hairline--bottom transparent" data-v-81dae98a="">
                 <div class="van-nav-bar__content"><!---->
-                    <div class="van-nav-bar__title van-ellipsis">Funds</div>
+                    <div class="van-nav-bar__title van-ellipsis">Fundos</div>
                     <div class="van-nav-bar__right van-haptics-feedback"><img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAzBJREFUWEft2UuoVXUUx/GPvexBUQZBgdBj4EB7QEUUBaXRg0YR9HRQmY+cF0WD0IlCBU2KhKygwh5ENghqUApBQUVYOohASSuo6EFFRWkPfvDfsD16dD/OufceuGt2zn/91/rutf977bXWnmPCZM6E8RoEPg7LcDPOw0kcoDPua/wPv+IzvIKN+LNyWge+AK/h7HETtbS/CzdhW/ZVwOfjPZxYjOWK3sf3yBVPpYTpNFyG3PHIb7gCn2bxWOzAOWUxt+A+/DyVlAfxdQoeKUc0yzuxKMD34ska7D3TDDro/uka9OoAb8GV+B3zZ0BkB4ET6a9wArYG+Cfkz7dx3QyLboXzFq5NMAP8b3n4nsNdMxT4WdyZBBDgKgvkz7tnKPAzVTAnBXgDVmDvpABfimSLzV2Ak68vHsErex/exY9tjmFb4LwJvy41Rhs/w3Q/KG+0xrbaAicX7sapjT0cWnErrmpjqy1wbJ+BFEp9S9McidQrqRMaSxfgxsbHoTgLPI6o1m3ORnhMET4CV1cF/CTUEg9gHb6YlCPRq/hZjcUN83BK1814sedR6Qyc5vDbhrAV4984Hv/0gO4MnMP/BpY0hE6EXy3Fdw9enYH7OO2zdxa4T/Sa7N0vwntxVHmSlzbZPQ06L+AO7Ese3lPmER+XTmIaeA7r8iNclOYhwMmRt5d2/8Jq6HZYE1OnkLnfJ0iG2hTgVPzprSLby+9WfdYY2edl2oNzi48lVdewCbeWP7/Ew3izbYM4QvCA3oA1OKvYzaz4lgo4vVrGQZcPOE0bM0yy9jkeQx6KJpJ2fS0uwdwhG8J09MBaWqlrMv+r92UxsB6pFY5p4r2m8zJW4pch+wKQu5aq68gWtpPBnirj37+y72CN5Om4sfbJYJj9zJUzPKyGzpmU34YPBzYswPO1DJRyNhPTH4YYrn8yeB3f1PX6dr6L8BIWFqMpdB4qxySOV+HRMiqNyndl1pvno5P0BY7TRPhxLK/dsaShVGeZEFUSyHzwCXRnGQVw5TxfnjK0O3mA5g/cjyc6U9Y2jhI4Zs8srcz1JdG/gwdLNhkFb+/pzUgg2hgZdYTb+O6k+z9FLbF2wg65xgAAAABJRU5ErkJggg=="
                             alt="" data-v-81dae98a=""></div>
@@ -128,8 +128,8 @@
             </div>
             <section class="section-box" data-v-81dae98a="">
                 <div class="needbox" data-v-81dae98a="">
-                    <div class="choosei" data-v-81dae98a=""><p data-v-81dae98a="">Fund List</p><span
-                            data-v-81dae98a="">Choose the fund investment you need</span></div>
+                    <div class="choosei" data-v-81dae98a=""><p data-v-81dae98a="">Fundo Lista</p><span
+                            data-v-81dae98a="">Escolha o investimento do fundo que você precisa</span></div>
                 </div>
                 <div class="prolist" data-v-81dae98a="">
                     @foreach(\App\Models\Fund::where('status', 'active')->get() as $element)
@@ -142,9 +142,9 @@
                         <div class="double" data-v-81dae98a=""><p class="ellipsis-2" data-v-81dae98a="">{{$element->name}}</p>
                         </div>
                         <p class="priceuis" data-v-81dae98a="">{{price($element->minimum_invest)}}</p>
-                        <div class="infobox flex" data-v-81dae98a=""><span data-v-81dae98a="">Cycle:</span>
+                        <div class="infobox flex" data-v-81dae98a=""><span data-v-81dae98a="">Ciclo:</span>
                             <p data-v-81dae98a="">{{$element->validity}} days</p></div>
-                        <div class="infobox flex" data-v-81dae98a=""><span data-v-81dae98a="">Total Return:</span>
+                        <div class="infobox flex" data-v-81dae98a=""><span data-v-81dae98a="">Total Retorno:</span>
                             <p data-v-81dae98a="">{{price($element->commission)}}</p></div>
                         @if($myFund)
                         <button type="button"
@@ -152,7 +152,7 @@
                                 class="van-button van-button--default van-button--normal nowbtn"
                                 data-v-81dae98a="">
                             <div class="van-button__content">
-                                <span class="van-button__text">My Fund</span>
+                                <span class="van-button__text">Meu Fund</span>
                             </div>
                         </button>
                         @else
@@ -161,7 +161,7 @@
                                     class="van-button van-button--default van-button--normal nowbtn"
                                     data-v-81dae98a="">
                                 <div class="van-button__content">
-                                    <span class="van-button__text">Invest</span>
+                                    <span class="van-button__text">Investir</span>
                                 </div>
                             </button>
                         @endif
@@ -173,8 +173,8 @@
                                     <i class="fa fa-close"></i>
                                 </div>
                                 <div class="fund_body" style="text-align: center;">
-                                    <p>Thanks for choosing me. dear do you invest confirm</p>
-                                    <button class="fund_confirm" onclick="window.location.href='{{route('fund.invest.confirm', $element->id)}}'">Confirm Now</button>
+                                    <p>Obrigado por me escolher. caro você investe confirmar</p>
+                                    <button class="fund_confirm" onclick="window.location.href='{{route('fund.invest.confirm', $element->id)}}'">Confirme agora</button>
                                 </div>
                             </div>
                         </div>

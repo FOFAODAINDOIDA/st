@@ -78,8 +78,8 @@
                     <div>
                         <img class="fi_g" src="{{asset('public/app/img/giff_banner.png')}}">
                         <form action="javascript:void(0)">
-                            <input type="text" placeholder="{{translator('Please fill gift code')}}" name="bonus_code" class="gif_code" oninput="go_gi()">
-                            <button class="gif_btn" onclick="submitBonusRequest()">{{translator('Exchange')}}</button>
+                            <input type="text" placeholder="Por favor, insira o código do presente" name="bonus_code" class="gif_code" oninput="go_gi()">
+                            <button class="gif_btn" onclick="submitBonusRequest()">Trocar</button>
                         </form>
                     </div>
 
@@ -129,7 +129,7 @@
                     .catch(err => console.log(err));
             }else {
                 setTimeout(function (){
-                    message('OOPs. Please Enter Bonus Code!')
+                    message('Oopss. Por favor, insira o código do bônus!')
                 }, 2000)
             }
         }

@@ -68,7 +68,7 @@
                 @endif
         @endforeach
         @else
-            <h4 style="color: rgb(0, 100, 166);text-align: center;margin-top: 20px">Data not found</h4>
+            <h4 style="color: rgb(0, 100, 166);text-align: center;margin-top: 20px">Dados não encontrados</h4>
         @endif
     </div>
 </div>

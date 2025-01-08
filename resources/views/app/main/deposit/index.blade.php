@@ -59,7 +59,7 @@
                     <div class="van-nav-bar__left van-haptics-feedback" onclick="window.location.href='{{route('dashboard')}}'"><i
                             class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!---->
                             <!----></i><!----></div>
-                    <div class="van-nav-bar__title van-ellipsis">Deposit</div>
+                    <div class="van-nav-bar__title van-ellipsis">DEPOSITO</div>
                     <div class="van-nav-bar__right van-haptics-feedback"><img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAsCAYAAAATmipGAAAAAXNSR0IArs4c6QAAAZ5JREFUWEftmb9OwzAQxr9LaRFMaa+ZeAjYykPwBkiMTPyZYGFmgQnYGJF4A96BssFDMKWmmaigtIccGhEhgWtI2hg5QxT5TufvfhfbiU34vBrMvC0INomwCmApZ5vl40AED4TxtVLqEsCr7pz0jZlXhIIbAtZmqcjUlwD3JOMNpdSjFtpotaO7qonMktBin3pxh5h5BxRcTAwvEByORsOrJEkSU8Zl2MMwDGu1+hYIJwAW0z5kvEstbneJqPPRgH2l4vMyBNjGZI72QDhLZQm6xO3oORs4o7dhc14kvyaSkl2o9yftAy1UMifVi9PBVZUrr80LLaIqnmgRFPMxPNG5Em0yHxPogIjqRQoRkaFATvtKHX0X16r0+QWhSKHZRK568XIhQp0hWgLFqUNalX7qqCU4eqFFQ/VEPVH9F/pvPpx/O+FPs0SaXhWrwfTHJXTw0xJZqFBniJqyLtNuVfoyhZhie6EmQrZ2T9SWmMnfEzURsrV7orbETP7OEnVjI7fF0S0R1tMyVHpr3JXDBmeOb3TFXTkQy2aJSh8xvgNeM1tY9oxEwwAAAABJRU5ErkJggg=="
                             alt="" data-v-6dceafc6=""></div>
@@ -67,24 +67,21 @@
             </div>
             <section class="section-box" data-v-6dceafc6="">
                 <div class="totalass" data-v-6dceafc6=""><p class="aomouti" data-v-6dceafc6="" style="color: #fff;">{{price(auth()->user()->balance)}}</p><span
-                        data-v-6dceafc6="">Total assets</span></div>
-                <p class="payment" data-v-6dceafc6="">Payment method</p>
+                        data-v-6dceafc6="">BRL TOTAL</span></div>
+                <p class="payment" data-v-6dceafc6="">METODO DE PAGAMENTO</p>
                 <div class="paylist" data-v-6dceafc6="">
-                    <div class="methodi chopay" data-v-6dceafc6=""><p data-v-6dceafc6="">Channel I</p><img
+                    <div class="methodi chopay" data-v-6dceafc6=""><p data-v-6dceafc6="">METODO 1</p><img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAsCAYAAAAn4+taAAAAAXNSR0IArs4c6QAAA4RJREFUaEPVmVmoTlEUx3/XPBOJQl0UUqZkKErJgwxFrgdFQmaZHsQlT0ShpAwPhkKmUOZShiJPPN1ShjfdhEvigWvu/7W/27nn7nO+fYbPd856uvc7e5+zfnvttc7a/1NF/q0VsL8q5xztgbNATZ5BegLXgMkKRl5BqoE7wLDijsojyFjgJtDXmxZ5A5kBXAS6+HM7TyDLgSNAG1uBygvILqA2LKezDtIWOAEsKvWayDJIN+AKMK0URJbLbz/gNjDSBSKrICOAW8AAV4gsgkwFrgLdo0BkDWShSex2USGyBKLSqhIbu/jEnhhn1SxzWgOHgZVJ71dJkM7ABWBWUohKbq0+wA1gXBoQlQIZYlrwQWlBVAJkkjkM9UoT4n+DzAPOAB0TQHwHOlSy+90AHABUpeJaHTDbVLit/lJd7qpVUDiATXG9N/PuAvOBL+b/ZcBRQN1xwcoJoi2grVSTEOI4sBr45buPyvb1IkO5QJopHDFB/gDbgb2W+bq/erIp5lpjOUAGmha8SeGIAaKkXgxcssxV2VaLP9RzrSFtEKvCERHkAzAHeGKZN9Fsp96+a3VpggQqHBFAXgIzgdeWOcq10wHl+3JaIKEKhyPIIxOJT5bxW4A9gKqgzbalAWJTOP4CDwAdlFzsHLAUaPQNlvSj7nhFiZtMSAISpHDIGUVIpVdl81CQFgUIeDew0/zt9berSfbpJSDeANVxQYIUDm0LtSIPPQ9X7qhdl2Ne+wGsAk5ZHO1vZNFRDuHUlquNAxKmcKwxb1z/80cbxzRX9tm8KO9ZHB1jWvzi2DAWRX8wUB8VpJTC8dOs8smAVdYZpIepTM8tY1SxFL0W2m4AjSTUtboWBcRV4dC+V7h3BOz7TsA7i2Ny6GBIPvmnNJjPCh+jgMRROM4DSyyVyO+QSuo+YLNDPhSHaLEWGGW+8JtLRJIoHI/Nu6GwahZTdPTpbG4ECA1V56t8bLIwkLQUjleAKpf/ba1zu7rX8REhpEKqhWnWDQeBpKpwANrPWnVFSDbcyKL6hBbFBKFzyTf/JBtI6gqHeag6WuXMe6Oyq3q5mnLiGLDeci6x5khZFA6Ptzpj/Pae7BxIFM113sS2zfFGpGwKh4OztiF62ekjj9qXoGLRItnTUDhi+ttimnonVTI1i/WuN1VENhqBIInC4fo87zit+FfgLfACeAbcB54C2oKR7B9aP5m07CEYcAAAAABJRU5ErkJggg=="
                             alt="" data-v-6dceafc6=""></div>
                 </div>
-                <p class="payment lastiui" data-v-6dceafc6="">Select amount</p>
+                <p class="payment lastiui" data-v-6dceafc6="">Selecione o valor</p>
                 <div class="selce-amount" data-v-6dceafc6="">
-                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 700)"><p data-v-6dceafc6="">700</p><!----></div>
-                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 942)"><p data-v-6dceafc6="">942</p><!----></div>
-                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 1842)"><p data-v-6dceafc6="">1842</p><!----></div>
-                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 2842)"><p data-v-6dceafc6="">2842</p><!----></div>
-                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 4242)"><p data-v-6dceafc6="">4242</p><!----></div>
-                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 6742)"><p data-v-6dceafc6="">6742</p><!----></div>
-                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 9842)"><p data-v-6dceafc6="">9842</p><!----></div>
-                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 14342)"><p data-v-6dceafc6="">14342</p><!----></div>
-                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 24500)"><p data-v-6dceafc6="">24500</p><!----></div>
+                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 50)"><p data-v-6dceafc6="">50</p><!----></div>
+                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 140)"><p data-v-6dceafc6="">140</p><!----></div>
+                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 400)"><p data-v-6dceafc6="">400</p><!----></div>
+                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 750)"><p data-v-6dceafc6="">750</p><!----></div>
+                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 1100)"><p data-v-6dceafc6="">1100</p><!----></div>
+                    <div class="amount" data-v-6dceafc6="" onclick="getAmount(this, 2000)"><p data-v-6dceafc6="">2000</p><!----></div>
                 </div>
                 <div class="van-cell van-field input-box" data-v-6dceafc6=""><!----><!---->
                     <div class="van-cell__value van-field__value">
@@ -93,25 +90,24 @@
                                                             class="van-field__control"
                                                             placeholder="Enter the deposit amount you need"><!---->
                             <!----><!----></div><!----><!----></div><!----><!----></div>
-                <button class="btnposit" data-v-6dceafc6="" onclick="goMethodSelecrot()">Deposit Now</button>
+                <button class="btnposit" data-v-6dceafc6="" onclick="goMethodSelecrot()">CONTINUAR PARA PAGAMENTO</button>
                 <div class="tipsui" data-v-6dceafc6=""><img
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAABDlJREFUWEfVmX2IVFUUwH9nVslA19IEIyKhqCAqYd/M1irZB/0lUfRhREVCYaXt+kdQa4JYUFtBUJrbB4gIRZQSRcxfYVLQ2s68DVGCCgpDosLNVTfIxd135N6585qPN/vemxllev++c879vXPv+bjnCU08upUMq/EQbkfpAa4BLkVYYM0pk8AfwE8IYyhfkceXrQRpl5M0CnqQy5hmA8ojwOVpdIGjCB8whx2ynN+T6iYC1FEW08VLKI8DF0QYV4QTwCn3rhvlIiDK/hTCTmbYIr38HQcaC6gFHkR4G7ikwpgCBxC+IOAbMvwgHicrF1OfhQRcR4ZbUO4Cbq4BHkd5RnJ8PBtkQ0DdzxwWsA3lqdCwMIWym4A3pJef476+CniUq8nwLMJjaLgLxvPvMsmA3MZ0lL1IQB3hQuayB1hdobSPgPVpwWoX1RLoMHBHxbs8Z3hA+vi3Vr4O0HpuPp+FcMoMGTbTw+simK1t+VHjtzGeI+BlhC5nMM8/3FPryXpAn2GUp53SaZSHJcenLVNFRVaBexE+BObZ18I74rG+UrQK0AXER1bUeA7WJIXTAqsQrkLJS44/k36QGkj4xHlSUR6qDJwQ0KaSDD+G0SoMisdrSRbSAhsR3nSyf6EsTwXp8zzKq05/nIBryynoP0CfHWjo3n143Jn0zKnPQZQbKz7mCcmyM8nHGRl7Jn2+DANHGBaPDaVdNwKmQpzhF5uETSqZ4YY00apF9gL3hUDKrZLj66SAlsFEdxeHXAqaYi5XmopTAiwwhDDoDL4vWZ5MZbzAUpvMzRkM2CU53kqjX5bVIu8B61zADInHC+IK/xFXW9Xtf6ok3AxMlI7LkSYOjOOOkmeZaJEcMOoURiTLinYt2IwdLfIt0Od0e0V9BlGGnFs3iRdGU6x99VmJML9KcJpf05zf2kXqeLRoS9r9VlBZITlGYslK53YLwot1siZ/drFSevguiZ06wAJ9iPWiefaaLT4EXG/xhItru5JGi6jPLpS1Dd73S9Z2QKkf2wUpE+4cHjaAx2xyViYkx6KkFvV7ljDNABm6nfdNHlzljsqAeGxPaivCi8eNs4BxcwZNvTX57zfxWNa0UZ9+lG1tAfQ5gnKFycn/A8DyFgsT4iXf4ojoa6cHj6PlLW4ySM4VYFSQNJVmzhlgXZppIVFXQmqbgiQqUbel1LUNsK7UlaYELTcL7QCMbBZshfN5BWWT27JE7ZaOcRMB2xEWukRtLupLnI1j7iIPAadQ+qWXA3E5NrLdsoBNNKxVNTxuZWGPeKyZTWzWhtV5MVXLr0XuBnaD82DDos0kwqOS5fOGInEtvwVs4dIU58C495rk0mQhS3OYpq6dcRANvZf02lk2oJ18cbde7PTRh4Xs5OFRuNWdPH6rqrGdOsCsgkwyAlZOkHEj4IBu5DyNgKtAO3WIXtf7ncffEGcBV60t4f/CB9oAAAAASUVORK5CYII="
                         alt="" data-v-6dceafc6="">
-                    <p data-v-6dceafc6="">Deposit tips</p></div>
+                    <p data-v-6dceafc6="">Instruções de recarga</p></div>
                 <p class="welcome" data-v-6dceafc6="">
-                    Deposit tips
+                  
 </br></br>
-  1. The minimum recharge value available is BDT.542 and users follow the below steps to conveniently recharge.
+1. O valor mínimo de recarga é de R$ 50. Caso o valor seja inferior ao valor mínimo, não será creditado.
 </br></br>
-  2. If your app account balance is not updated to reflect the recharge within 30 minutes of a successful transaction, we request you to contact our customer service team immediately.  While contacting us, provide your account number along with confirmation of successful recharge for efficient assistance.
+2. O valor da transferência deve corresponder ao pedido que você criou, caso contrário a transferência não será recebida com sucesso.
 </br></br>
-  3. For a seamless transaction experience, we advise against saving recipient account details from previous transfers.  It is essential to ensure that the recharge receipt matches the payment amount to avoid any possible payment errors.
+3. Crie um novo pedido de recarga para cada pagamento e especifique a conta de pagamento.
 </br></br>
-  4. To increase the security of your transactions, it is recommended to recharge exclusively within the application.  Additionally, exercise caution and avoid sending money to strangers to protect your financial transactions and personal information.
+4. Aguarde de 10 a 20 minutos após a transferência ser bem-sucedida. Se o seu dinheiro demorar muito para chegar, entre em contato com a equipe oficial.
                 </p></section>
         </div>
     </div><!----></div>
-
 <style>
     .opop {
         width: 100%;
@@ -145,7 +141,7 @@
 
 <div class="opop" style="display: none;">
     <div class="opop_container">
-        <h4>Select payment method</h4>
+        <h4>পেমেন্ট পদ্ধতি নির্বাচন করুন</h4>
         <div style="display: flex; justify-content: space-between;margin-top: 20px;" onclick="goMethodSelecrot()">
             <div style="font-size: 15px;">DCExchange</div>
             <div style="font-size: 15px;"><i class="fa fa-chevron-right"></i></div>

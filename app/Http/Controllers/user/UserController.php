@@ -144,38 +144,6 @@ class UserController extends Controller
         return redirect('recharge-success');
     }
 
-    public function recharge__pix_confirm_submit(Request $request)
-    {
-        $model = new Deposit();
-
-        $path = uploadImage(false ,$request, 'photo', 'upload/usdt/', 200, 200 ,$model->photo);
-        $model->user_id = Auth::id();
-        $model->method_name = $request->paymethod;
-        $model->order_id = rand(0000,9999).rand(0000,9999);
-        $model->transaction_id = $request->transaction_id;
-        $model->number = '0000000000';
-        $model->amount = $request->amount;
-        $model->photo = $path ?? $model->photo;
-        $model->charge_amount = 0;
-        $model->oid = 'D-'.rand(000000,999999).rand(000000,999999).rand(000000,999999);
-        $model->final_amount = $request->amount;
-        $model->date = date('d-m-Y H:i:s');
-        $model->status = 'pending';
-        $model->save();
-
-        //Create user ledger
-        $ledger = new UserLedger();
-        $ledger->user_id = Auth::id();
-        $ledger->reason = 'user_deposit';
-        $ledger->perticulation = 'user deposit using externalment';
-        $ledger->amount = $request->amount;
-        $ledger->debit = $request->amount;
-        $ledger->status = 'pending';
-        $ledger->date = date('y-m-d');
-        $ledger->save();
-        return redirect('recharge-success');
-    }
-
     public function recharge_success()
     {
         return view('app.main.deposit.recharge_success');
@@ -395,14 +363,15 @@ class UserController extends Controller
             if ($request->gateway_method && $request->gateway_number) {
                 User::where('id', Auth::id())->update([
                     'name' => $request->name,
+                    'gateway_method' => $request->gateway_method,
                     'gateway_number' => $request->gateway_number,
                 ]);
-                return redirect()->route('user.card')->with('success', 'Chave Pix Adicionada!');
+                return redirect()->route('user.card')->with('success', 'Card added.');
             } else {
-                return redirect()->route('user.card')->with('error', 'Alguma coisa deu errado!');
+                return redirect()->route('user.card')->with('error', 'Something wrong.');
             }
         }else {
-            return redirect()->route('user.card')->with('error', 'Senha Incorreta');
+            return redirect()->route('user.card')->with('error', 'Password not match');
         }
     }
 

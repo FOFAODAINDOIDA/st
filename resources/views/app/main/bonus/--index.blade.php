@@ -31,7 +31,7 @@
                         <div class="card-body">
                             <table class="">
                                 <tr>
-                                    <td>Total Assets</td>
+                                    <td>Total de Ativos</td>
                                     <td> {{price(auth()->user()->balance)}}</td>
                                 </tr>
                             </table>
@@ -48,16 +48,16 @@
                 <div class="col-12">
                     <div class="w_form">
                         <div>
-                            <h4 style="color: #03521e" class="text-center">{{$data ? $data->bonus_name : "Bonus Not Available"}}</h4>
+                            <h4 style="color: #03521e" class="text-center">{{$data ? $data->bonus_name : "Bônus Não Disponível"}}</h4>
                         </div>
                         <form action="javascript:void(0)" onsubmit="submitBonusRequest()" id="withdraw_form" method="post" enctype="multipart/form-data">@csrf
                             <div class="amount w_input_box mt-5">
-                                <label for="bonus_code" style="color: #03521e">Enter bonus code. we hope get your bonus code from our service</label>
-                                <input type="text" id="bonus_code" placeholder="Please input number" name="bonus_code" class="w_input">
+                                <label for="bonus_code" style="color: #03521e">Insira o código de bônus. Esperamos que você obtenha seu código de bônus do nosso serviço</label>
+                                <input type="text" id="bonus_code" placeholder="Por favor, insira um número" name="bonus_code" class="w_input">
                             </div>
 
                             <div class="amount w_input_box mt-2">
-                                <input type="submit" class="w_submit" value="Request Bonus">
+                                <input type="submit" class="w_submit" value="Solicitar Bônus">
                             </div>
                         </form>
                     </div>
@@ -75,7 +75,7 @@
             var loader = document.querySelector('.loader');
             var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             var code = document.querySelector('input[name="bonus_code"]').value
-            //must need
+            //necessário
             var Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -121,7 +121,7 @@
                     loader.style.display = 'none';
                     Toast.fire({
                         icon: 'error',
-                        title: 'OOPs. Please Enter Bonus Code!'
+                        title: 'Ops. Por favor, insira o código de bônus!'
                     })
                 }, 2000)
             }

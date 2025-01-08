@@ -8,13 +8,13 @@
     <title>{{setting('site_name')}}</title>
     <link href="{{asset('public')}}/IndustrialRobots/dist/css/chunk-vendors.1b220e19.css" rel="stylesheet">
     <link href="{{asset('public')}}/IndustrialRobots/dist/css/app.40cacca1.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/IndustrialRobots/dist/css')}}/800.6d4723c4.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/IndustrialRobots/dist/css')}}/532.da379610.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/IndustrialRobots/dist/css')}}/222.258fab4b.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/IndustrialRobots/dist/css')}}/88.4d2ecb2d.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/IndustrialRobots/dist/css')}}/506.d94d4718.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/IndustrialRobots/dist/css')}}/958.03e0f1e5.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('public/IndustrialRobots/dist/css')}}/246.61d7acde.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('public')}}/IndustrialRobots/dist/css/800.6d4723c4.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('public')}}/IndustrialRobots/dist/css/532.da379610.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('public')}}/IndustrialRobots/dist/css/222.258fab4b.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('public')}}/IndustrialRobots/dist/css/88.4d2ecb2d.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('public')}}/IndustrialRobots/dist/css/506.d94d4718.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('public')}}/IndustrialRobots/dist/css/958.03e0f1e5.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('public')}}/IndustrialRobots/dist/css/246.61d7acde.css">
     <style>
         .billpage[data-v-7813868a]:after {
             content: "";
@@ -24,7 +24,7 @@
             z-index: -1;
             width: 100vw;
             height: 51.333333vw;
-            background: url({{asset('public')}}IndustrialRobots/dist/img/1.c0ba8dc8.png) no-repeat;
+            background: url({{asset('public')}}/IndustrialRobots/dist/img/1.c0ba8dc8.png) no-repeat;
             background-size: cover;
             filter: hue-rotate(45deg);
         }

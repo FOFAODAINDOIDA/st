@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{setting('site_name')}}</title>
-    <!-- favicon icon -->
+    <!-- Ícone favicon -->
     <link rel="icon" href="{{asset('public/footbal')}}/assets/image/favicon.ico">
-    <!-- === Font awesome === -->
+    <!-- === Font Awesome === -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- === Css Area Start === -->
+    <!-- === Início da Área de CSS === -->
     <link rel="stylesheet" href="{{asset('public/footbal')}}/assets/css/global.css">
     <link rel="stylesheet" href="{{asset('public/footbal')}}/assets/css/style.css">
     <link rel="stylesheet" href="{{asset('public/footbal')}}/assets/css/setting.css">
@@ -39,7 +39,7 @@
             border: none;
             background: #00000017;
         }
-        input[type="text"]::placeholder{
+        input[type="text"]::placeholder {
             color: #000;
         }
         button.gift_btn {
@@ -61,7 +61,7 @@
         .setting_body {
             top: 164px;
         }
-        body{
+        body {
             background: #db1e09;
         }
         form.gift_box_form {
@@ -75,20 +75,20 @@
 <div class="setting_container">
     <div class="page_title">
         <div onclick="window.location.href='{{route('mine')}}'"><i class="fa fa-chevron-left"></i></div>
-        <div>Exchange</div>
+        <div>Trocar</div>
         <div></div>
     </div>
    <div style="text-align: center">
        <img src="{{asset('public/bg.png')}}" alt="">
    </div>
     <form action="javascript:void(0)" method="" class="gift_box_form"> @csrf
-        <label for="gift">Exchange code</label>
+        <label for="gift">Código de troca</label>
         <div>
-            <input type="text" name="bonus_code" placeholder="Please enter  code">
+            <input type="text" name="bonus_code" placeholder="Por favor, insira o código">
         </div>
 
         <div>
-            <button class="gift_btn" onclick="submitBonusRequest()">Receive</button>
+            <button class="gift_btn" onclick="submitBonusRequest()">Receber</button>
         </div>
     </form>
 </div>
@@ -147,7 +147,7 @@
     </div>
     <div class="clickMeText">
         <div class="gi_amount">0</div>
-        <button onclick="submitBonusRequestSubmit()">Click me</button>
+        <button onclick="submitBonusRequestSubmit()">Clique aqui</button>
     </div>
 </div>
 
@@ -156,14 +156,13 @@
 <script src="{{asset('public/footbal')}}/assets/js/script.js"></script>
 
 <script>
-    function submitBonusRequest()
-    {
+    function submitBonusRequest() {
         var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        var code = document.querySelector('input[name="bonus_code"]').value
-        if (code != ''){
+        var code = document.querySelector('input[name="bonus_code"]').value;
+        if (code != '') {
             var data = {
                 bonus_code: code,
-            }
+            };
             fetch('{{route('user.submit-bonus')}}', {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -174,34 +173,29 @@
             })
                 .then(response => response.json())
                 .then(res => {
-                    code = ''
-                    if (res.status === true)
-                    {
+                    code = '';
+                    if (res.status === true) {
                         document.getElementById('box_show').style.display = 'block';
                         document.querySelector('.gi_amount').innerHTML = res.amount;
-                        // message(res.message);
-                        {{--window.location = '{{route('gift')}}';--}}
-                    }else {
+                    } else {
                         message(res.message);
                     }
                 })
                 .catch(err => console.log(err));
-        }else {
-            setTimeout(function (){
-                message('OOPs. Please Enter Bonus Code!')
-            }, 2000)
+        } else {
+            setTimeout(function () {
+                message('Ops. Por favor, insira o código de bônus!')
+            }, 2000);
         }
     }
 
-
-    function submitBonusRequestSubmit()
-    {
+    function submitBonusRequestSubmit() {
         var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        var code = document.querySelector('input[name="bonus_code"]').value
-        if (code != ''){
+        var code = document.querySelector('input[name="bonus_code"]').value;
+        if (code != '') {
             var data = {
                 bonus_code: code,
-            }
+            };
             fetch('{{route('user.submit-bonus-confirm')}}', {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -212,24 +206,23 @@
             })
                 .then(response => response.json())
                 .then(res => {
-                    code = ''
-                    if (res.status === true)
-                    {
+                    code = '';
+                    if (res.status === true) {
                         document.getElementById('box_show').style.display = 'block';
                         document.querySelector('.clickMe').style.display = 'block';
                         document.querySelector('.boc').style.display = 'none';
                         document.querySelector('.clickMeText').style.display = 'none';
                         document.querySelector('input[name="bonus_code"]').value = '';
                         document.querySelector('.gi_amount').style.display = 'none';
-                    }else {
+                    } else {
                         message(res.message);
                     }
                 })
                 .catch(err => console.log(err));
-        }else {
-            setTimeout(function (){
-                message('OOPs. Please Enter Bonus Code!')
-            }, 2000)
+        } else {
+            setTimeout(function () {
+                message('Ops. Por favor, insira o código de bônus!')
+            }, 2000);
         }
     }
 </script>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,7 +68,7 @@
                          onclick="window.location.href='{{route('dashboard')}}'">
                         <i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"></i>
                     </div>
-                    <div class="van-nav-bar__title van-ellipsis">Task List</div>
+                    <div class="van-nav-bar__title van-ellipsis">Lista de Tarefas</div>
                 </div>
             </div>
             <?php $task = \App\Models\Task::first();?>
@@ -77,17 +77,17 @@
                     <div style="overflow: hidden; margin-top: 15px;">
                         <div style="width: 22%;float: left;" class="left">
                             <img style="width: 50px;border-radius: 5px;" src="{{asset('public')}}/goro.jpg" alt="">
-                            <div class="badge_e">Members</div>
+                            <div class="badge_e">Membros</div>
                         </div>
                         <div style="width: 56%;float: left;"  class="middle" >
-                            <p>Demand Side: {{$task->task_code}}</p>
-                            <p>Recuse Code: <span style="color: #ff0074;font-weight: bold;">{{$task->remaining_code}}</span></p>
-                            <p>Request: </p>
+                            <p>Lado da Demanda: {{$task->task_code}}</p>
+                            <p>Código de Recusa: <span style="color: #ff0074;font-weight: bold;">{{$task->remaining_code}}</span></p>
+                            <p>Solicitação: </p>
                         </div>
                         <div style="width: 22%;float: left;">
-                            <h5 style="color: #400dff;text-align: right;font-size: 14px;">Paid</h5>
+                            <h5 style="color: #400dff;text-align: right;font-size: 14px;">Pago</h5>
                             <h5 style="color: #ff0074;text-align: right;font-size: 14px;padding: 8px 0;">{{price($task->amount)}}</h5>
-                            <div class="badge_e" style="background: #ff007470;">Submitted</div>
+                            <div class="badge_e" style="background: #ff007470;">Enviado</div>
                         </div>
                     </div>
                 </section>
@@ -98,17 +98,17 @@
                     <div style="overflow: hidden; margin-top: 15px;">
                         <div style="width: 22%;float: left;" class="left">
                             <img style="width: 50px;border-radius: 5px;" src="{{asset('public')}}/goro.jpg" alt="">
-                            <div class="badge_e">Members</div>
+                            <div class="badge_e">Membros</div>
                         </div>
                         <div style="width: 56%;float: left;"  class="middle" >
-                            <p>Demand Side: {{$task->task_code}}</p>
-                            <p>Recuse Code: <span style="color: #ff0074;font-weight: bold;">{{$task->remaining_code}}</span></p>
-                            <p>Request: </p>
+                            <p>Lado da Demanda: {{$task->task_code}}</p>
+                            <p>Código de Recusa: <span style="color: #ff0074;font-weight: bold;">{{$task->remaining_code}}</span></p>
+                            <p>Solicitação: </p>
                         </div>
                         <div style="width: 22%;float: left;">
-                            <h5 style="color: #400dff;text-align: right;font-size: 14px;">UnPaid</h5>
+                            <h5 style="color: #400dff;text-align: right;font-size: 14px;">Não Pago</h5>
                             <h5 style="color: #ff0074;text-align: right;font-size: 14px;padding: 8px 0;">{{price($task->amount)}}</h5>
-                            <div class="badge_e" onclick="window.location.href='{{route('task.submit', $task->id)}}'">Received</div>
+                            <div class="badge_e" onclick="window.location.href='{{route('task.submit', $task->id)}}'">Recebido</div>
                         </div>
                     </div>
                 </section>
