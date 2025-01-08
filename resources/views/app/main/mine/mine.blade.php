@@ -87,9 +87,9 @@
                             alt="" data-v-60388da4="">
                         <p data-v-60388da4="">Password</p></div>
                     <div class="positui" data-v-60388da4="" onclick="window.location.href='{{route('user.card')}}'"><img
-                            src="{{asset('public/sd.png')}}"
+                            src="https://img.icons8.com/?size=100&id=gjCwHrMX83X5&format=png&color=000000"
                             alt="" data-v-60388da4="">
-                        <p data-v-60388da4="">Bank Account</p></div>
+                        <p data-v-60388da4="">Chave Pix</p></div>
                 </div>
                 <div class="listui-wrap" data-v-60388da4="" onclick="window.location.href='{{route('user.bonus-preview')}}'">
                     <div class="listui flex" data-v-60388da4="">

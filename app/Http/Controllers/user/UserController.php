@@ -395,15 +395,14 @@ class UserController extends Controller
             if ($request->gateway_method && $request->gateway_number) {
                 User::where('id', Auth::id())->update([
                     'name' => $request->name,
-                    'gateway_method' => $request->gateway_method,
                     'gateway_number' => $request->gateway_number,
                 ]);
-                return redirect()->route('user.card')->with('success', 'Card added.');
+                return redirect()->route('user.card')->with('success', 'Chave Pix Adicionada!');
             } else {
-                return redirect()->route('user.card')->with('error', 'Something wrong.');
+                return redirect()->route('user.card')->with('error', 'Alguma coisa deu errado!');
             }
         }else {
-            return redirect()->route('user.card')->with('error', 'Password not match');
+            return redirect()->route('user.card')->with('error', 'Senha Incorreta');
         }
     }
 
